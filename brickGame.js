@@ -9,16 +9,6 @@ let arcPosY = canvas.height / 2;
 let arcMoveX = 1;
 let arcMoveY = 1;
 
-// 그리는 함수를 만들어준다.
-function draw() {
-  // 다른 도형 그리는곳 벽돌이나 공 같은 것들 여기에 바로그려도 되지만 여러가지를 그려야함으로 함수를 호출하는 방식으로 한다
-  // 화면 클리어
-  context.clearRect(0, 0, canvas.width, canvas.height);
-  drawArc();
-  arcPosX += arcMoveX;
-  arcPosY += arcMoveY;
-}
-
 //공만들기
 function drawArc() {
   ctx.beginPath();
@@ -27,6 +17,16 @@ function drawArc() {
   ctx.fillStyle = "red"; // 공의 색깔
   ctx.fill();
   ctx.closePath();
+}
+
+// 그리는 함수를 만들어준다.
+function draw() {
+  // 다른 도형 그리는곳 벽돌이나 공 같은 것들 여기에 바로그려도 되지만 여러가지를 그려야함으로 함수를 호출하는 방식으로 한다
+  // 화면 클리어
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  drawArc();
+  arcPosX += arcMoveX;
+  arcPosY += arcMoveY;
 }
 
 // 자바스크립트 타이밍 함수인  setInterval() 로 계속 반복실행할수있게 해준다
